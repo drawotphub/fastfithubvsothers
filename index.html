@@ -1,9 +1,9 @@
 <!-- fastfithub-competitor-comparison-updated.html
      Mobile-first, polished single-file competitor comparison.
      - Removed "build app MVP" language
-     - Calls out "UI/UX is very poor" as an urgent action
      - Emphasises FastFitHub as market leader visually
      - Mobile-optimised, readable, and visually appealing
+     - Included "Best Things About FastFitHub" (strengths-only)
      Replace SVG placeholders with real logos as needed.
 -->
 <!doctype html>
@@ -11,61 +11,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="google-site-verification" content="KhQnbRl5XtNDJwIfFSmhEEL22q7bRSqpPZjAZ4LflCg" />
   <title>FastFitHub — Competitor Brief (Updated)</title>
   <meta name="description" content="FastFitHub vs sugar.fit, Breathe Well-being, HealthifyMe, Fitelo — mobile-first business-news style comparison." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#071228; --card:#07182a; --muted:#9fb0c6; --accent:#7cf59f; --accent-2:#ffd36b; --glass: rgba(255,255,255,0.03);
-      --gold: linear-gradient(90deg,#ffd36b,#ffb657);
+      --bg:#071228; --card:#07182a; --muted:#9fb0c6; --accent:#7cf59f; --gold1:#ffd36b; --glass: rgba(255,255,255,0.03);
     }
     html,body{height:100%;margin:0;background:linear-gradient(180deg,#051126 0%, #071228 60%);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#eaf4fb;-webkit-font-smoothing:antialiased;}
-    .wrap{max-width:1100px;margin:18px auto;padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));box-shadow:0 10px 40px rgba(0,0,0,0.6);}
-    header{display:flex;gap:12px;align-items:center;padding:6px 8px;border-radius:12px}
-    .logo{width:62px;height:62px;border-radius:12px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;flex:0 0 62px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .wrap{max-width:1100px;margin:16px auto;padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+    header{display:flex;gap:12px;align-items:center;padding:6px 6px;border-radius:10px}
+    .logo{width:56px;height:56px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;flex:0 0 56px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
     .title-block{flex:1;min-width:0}
     .title{font-size:18px;font-weight:800;letter-spacing:0.2px}
     .subtitle{font-size:13px;color:var(--muted);margin-top:4px}
-    /* Leader ribbon */
-    .leader-ribbon{position:relative;display:inline-block;margin-left:8px;padding:6px 10px;border-radius:999px;background:var(--gold);color:#051219;font-weight:700;font-size:12px;box-shadow:0 6px 20px rgba(255,179,77,0.12)}
-    /* Tabs as horizontal scroll */
-    .tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 2px;margin-top:10px}
-    .tab{flex:0 0 auto;padding:10px 14px;border-radius:12px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);cursor:pointer;font-weight:600;white-space:nowrap}
+    .leader-ribbon{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--gold1),#ffb657);color:#051219;font-weight:700;font-size:12px}
+    .tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px;margin-top:10px}
+    .tab{flex:0 0 auto;padding:10px 12px;border-radius:12px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);cursor:pointer;font-weight:600;white-space:nowrap}
     .tab.active{background:rgba(124,245,159,0.08);border-color:rgba(124,245,159,0.14);color:var(--accent);box-shadow:0 8px 26px rgba(124,245,159,0.04)}
-    /* layout */
     .content{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:16px}
     @media (max-width:980px){.content{grid-template-columns:1fr;}}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 8px 26px rgba(2,6,23,0.5)}
     .headline{font-weight:800;font-size:16px}
     .muted{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.45}
     .kpi-grid{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
     .kpi{flex:1 1 110px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:10px;border-radius:10px;text-align:center}
     .kpi .num{font-weight:800;font-size:15px;color:var(--accent)}
     .kpi .label{font-size:12px;color:var(--muted);margin-top:6px}
-    /* fastfithub highlight */
     .fastfithub-hero{border:2px solid rgba(255,213,107,0.12);padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,229,182,0.02), rgba(255,255,255,0.01));display:flex;gap:12px;align-items:center}
-    .fastfithub-badge{background:var(--gold);padding:8px 10px;border-radius:10px;font-weight:800;color:#051219}
-    .fastfithub-lead{flex:1}
-    /* table */
+    .fastfithub-badge{background:linear-gradient(90deg,var(--gold1),#ffb657);padding:8px 10px;border-radius:10px;font-weight:800;color:#051219}
     .matrix{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
     .matrix th,.matrix td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.02);text-align:left}
     .matrix th{color:var(--muted);font-weight:700;font-size:13px}
     .matrix .best{background:linear-gradient(90deg, rgba(255,211,107,0.06), rgba(124,245,159,0.02));font-weight:700}
-    /* ticker */
     .ticker{overflow:hidden;white-space:nowrap;border-radius:8px;padding:10px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));margin-top:12px}
     .ticker .inner{display:inline-block;padding-left:100%;animation:slide 18s linear infinite;color:var(--muted);font-size:13px}
     @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-    /* CTA */
     .cta{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
     .btn{padding:12px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:800;font-size:14px}
     .btn.primary{background:linear-gradient(90deg,#00d97e,#7cf59f);color:#051219}
     .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
-    /* right column specifics */
-    .right .news{font-size:13px;color:var(--muted)}
-    .callout{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,0,0,0.03), rgba(255,0,0,0.01));border:1px solid rgba(255,0,0,0.06);color:#ffd6d6;font-weight:700}
     .pros{display:flex;flex-direction:column;gap:8px;margin-top:10px}
     .pro{background:rgba(255,255,255,0.01);padding:10px;border-radius:8px;border-left:4px solid rgba(124,245,159,0.12);color:var(--muted)}
-    /* small screens */
+    .strengths-list{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(124,245,159,0.03), rgba(255,255,255,0.01));border:1px solid rgba(124,245,159,0.06);color:#051219}
+    .strengths-list ul{margin:0;padding-left:18px;color:#051219;line-height:1.5;font-weight:600}
     @media (max-width:520px){
       .title{font-size:16px}
       .subtitle{font-size:12px}
@@ -79,8 +69,8 @@
   <div class="wrap" role="main" aria-label="FastFitHub competitor comparison (Updated)">
     <header>
       <div class="logo" aria-hidden="true">
-        <!-- FastFitHub logo placeholder -->
-        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- FastFitHub logo placeholder (replace with <img src="...">) -->
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect rx="14" width="100" height="100" fill="#071528"/>
           <g transform="translate(14,14)">
             <circle cx="22" cy="22" r="20" fill="#ffd36b" opacity="0.14"/>
@@ -88,16 +78,18 @@
           </g>
         </svg>
       </div>
+
       <div class="title-block">
-        <div style="display:flex;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px">
           <div class="title">FastFitHub — Competitor Brief</div>
           <div class="leader-ribbon" aria-hidden="true">Market Leader</div>
         </div>
         <div class="subtitle">Premium transformations vs sugar.fit · Breathe Well-being · HealthifyMe · Fitelo — mobile-first brief</div>
       </div>
+
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
         <div class="fastfithub-badge" aria-hidden="true">FastFitHub — Best-in-Class</div>
-        <div style="font-size:12px;color:var(--muted)">Updated: <strong style="color:#fff">Live</strong></div>
+        <div style="font-size:12px;color:var(--muted)">Snapshot: Strengths-focused • Mobile-ready</div>
       </div>
     </header>
 
@@ -114,7 +106,7 @@
       <!-- Left (main) -->
       <div class="card" id="detail-card">
         <div id="detail-inner">
-          <!-- dynamic content -->
+          <!-- dynamic content injected by JS -->
         </div>
       </div>
 
@@ -123,7 +115,7 @@
         <div class="headline">Market Snapshot</div>
         <div class="news muted">
           <div class="ticker" aria-hidden="true">
-            <div class="inner">FastFitHub: premium weekly transformations — highlighted leader. sugar.fit: clinical diabetes programs. Breathe: corporate well-being. HealthifyMe: mass-market AI & coaching. Fitelo: nutrition-first.</div>
+            <div class="inner">FastFitHub: premium weekly transformations — market leader. sugar.fit: clinical diabetes programs. Breathe: corporate well-being. HealthifyMe: mass-market AI & coaching. Fitelo: nutrition-first.</div>
           </div>
 
           <div style="margin-top:12px" class="kpi-grid">
@@ -132,14 +124,12 @@
             <div class="kpi"><div class="num">HNI Focus</div><div class="label">Distribution</div></div>
           </div>
 
-          <div class="callout" role="alert">URGENT: Current UI/UX is <strong style="color:#fff">very poor</strong> — mobile redesign required immediately to reflect premium positioning.</div>
-
           <div style="margin-top:12px">
             <div class="headline" style="font-size:14px">Priority Actions</div>
             <div class="pros">
-              <div class="pro">Redesign mobile UI: readability, hierarchy, larger tap targets, better contrast.</div>
-              <div class="pro">Visual polish: premium color palette, consistent iconography, hero case-studies.</div>
-              <div class="pro">Highlight FastFitHub superiority across pages: "Why FastFitHub" hero, badges, and social proof slots.</div>
+              <div class="pro">Redesign mobile UI to match premium positioning: readability, hierarchy, larger tap targets.</div>
+              <div class="pro">Visual polish: premium palette, consistent iconography, hero case-studies and badges.</div>
+              <div class="pro">Activate payment integrations and premium funnel — convert high-intent leads fast.</div>
             </div>
           </div>
 
@@ -153,13 +143,12 @@
       </aside>
     </div>
 
-    <footer style="margin-top:16px;color:var(--muted);font-size:13px">
-      <div>Notes: Replace placeholders with your brand assets & live metrics. This page is mobile-optimised and designed to highlight FastFitHub as the premium market leader.</div>
+    <footer style="margin-top:14px;color:var(--muted);font-size:13px">
+      <div>Notes: Replace placeholders with brand assets & live metrics. Page is mobile-first and highlights FastFitHub strengths.</div>
     </footer>
   </div>
 
   <script>
-    // Updated data model (removed "build app MVP" references)
     const data = {
       fastfithub: {
         name: "FastFitHub",
@@ -169,53 +158,59 @@
           {n:"Smart Tools", l:"Smart Hydration, analytics"},
           {n:"Premium", l:"High-ticket, no-discount"}
         ],
-        pros: ["Elite coaching & case studies","No discounts policy — premium positioning","Design-first marketing & social proof"],
-        cons: ["Current UI/UX is very poor — needs redesign","Payment integrations to finalise"]
+        pros: [
+          "Weekly Transformations — industry benchmark for momentum and results",
+          "Concierge-level coaching for HNIs & celebrities — elite, personalised service",
+          "Premium, no-discount positioning — attracts high-intent clients",
+          "Data-driven tools & wearables integration (Hydration, macros, analytics)",
+          "Custom plans built from scratch — no cookie-cutter templates",
+          "High retention via real accountability (daily check-ins, real-time feedback)",
+          "Proven social proof: 1000+ paid users in 10 months; 15,000+ lives transformed",
+          "Global vision: India → Dubai → USA with AI-first roadmap",
+          "Founder credibility: competitive athlete & certified master trainer"
+        ],
+        cons: ["Finalize payment integrations"]
       },
       sugarfit: {
         name: "sugar.fit",
         desc: "Diabetes-focused clinical programs and partner distribution.",
-        kpis: [
-          {n:"Clinical", l:"Diabetes care"},
-          {n:"Enterprise", l:"Employer partners"},
-          {n:"Funded", l:"Growth capital"}
-        ],
-        pros:["Strong clinical positioning","Funding to scale"], cons:["Narrow vertical (diabetes)"]
+        kpis: [{n:"Clinical", l:"Diabetes care"},{n:"Enterprise", l:"Employer partners"},{n:"Funded", l:"Growth capital"}],
+        pros:["Clinical focus","Partner distribution"], cons:["Narrow vertical"]
       },
       breathe: {
         name: "Breathe Well-being",
         desc: "Corporate well-being platform focused on engagement and rewards.",
         kpis:[{n:"B2B", l:"Corporate wellness"},{n:"Engagement", l:"Gamified rewards"},{n:"Reach", l:"Pan-India"}],
-        pros:["B2B distribution","Gamification"], cons:["Not premium consumer-first"]
+        pros:["B2B distribution"], cons:["Not premium consumer-first"]
       },
       healthifyme: {
         name: "HealthifyMe",
         desc: "Large consumer health app with AI assistant and coach offerings.",
         kpis:[{n:"Scale", l:"Millions of users"},{n:"AI", l:"Coach assistant"},{n:"Freemium", l:"Multiple tiers"}],
-        pros:["Brand recognition","Mature product"], cons:["Crowded price tiers"]
+        pros:["Brand recognition"], cons:["Crowded price tiers"]
       },
       fitelo: {
         name: "Fitelo",
         desc: "Nutrition-first weight-loss & coaching product with recent repositioning.",
         kpis:[{n:"Nutrition", l:"Weight loss focused"},{n:"D2C", l:"Direct consumer"},{n:"Rebrand", l:"Post-funding"}],
-        pros:["Focus on nutrition","Recent traction"], cons:["Mid-market positioning"]
+        pros:["Nutrition focus"], cons:["Mid-market positioning"]
       }
     };
 
     function render(key){
       const d = data[key];
       const container = document.getElementById('detail-inner');
-      // special visual emphasis for FastFitHub
       const isFFH = key === 'fastfithub';
+
       container.innerHTML = `
         <div class="${isFFH ? 'fastfithub-hero' : ''}">
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div style="display:flex;align-items:center;gap:10px">
-              ${isFFH ? '<div class="fastfithub-badge">#1</div>' : ''}
+          <div style="display:flex;flex-direction:column;gap:8px;width:100%">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
               <div style="min-width:0">
                 <div style="font-weight:800;font-size:16px">${d.name}</div>
-                <div style="color:var(--muted);font-size:13px;margin-top:4px">${d.desc}</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:6px">${d.desc}</div>
               </div>
+              ${isFFH ? '<div class="fastfithub-badge">#1</div>' : ''}
             </div>
           </div>
         </div>
@@ -224,13 +219,22 @@
           ${d.kpis.map(k => `<div class="kpi" role="group"><div class="num">${k.n}</div><div class="label">${k.l}</div></div>`).join('')}
         </div>
 
+        ${isFFH ? `
+          <div class="strengths-list" aria-hidden="true">
+            <div style="font-weight:800;margin-bottom:8px">Best Things About FastFitHub</div>
+            <ul>
+              ${d.pros.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
+        ` : ''}
+
         <div style="margin-top:14px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-          <div style="flex:1;min-width:180px">
+          <div style="flex:1;min-width:160px">
             <div style="font-weight:800;margin-bottom:8px">Strengths</div>
             <ul style="margin:0;padding-inline:18px;color:var(--muted)">${d.pros.map(p => `<li>${p}</li>`).join('')}</ul>
           </div>
-          <div style="flex:1;min-width:180px">
-            <div style="font-weight:800;margin-bottom:8px">Weaknesses</div>
+          <div style="flex:1;min-width:160px">
+            <div style="font-weight:800;margin-bottom:8px">Notes</div>
             <ul style="margin:0;padding-inline:18px;color:var(--muted)">${d.cons.map(c => `<li>${c}</li>`).join('')}</ul>
           </div>
         </div>
@@ -238,14 +242,13 @@
         <div style="margin-top:14px">
           <div class="headline" style="font-size:14px">Takeaway — Action</div>
           <div class="muted" style="margin-top:8px">${isFFH ? 
-            "Highlight FastFitHub as the premium market leader: redesign mobile UI/UX for premium perception, deploy 3 case studies & social proof, implement payments and live premium funnel." :
-            "Differentiate clearly: clinical (sugar.fit), corporate (Breathe), scale (HealthifyMe), nutrition-first (Fitelo)."
+            "Highlight FastFitHub as the premium market leader: redesign mobile UI/UX to match premium positioning, publish 3 high-profile case studies, and enable payment & funnel to convert HNI leads." :
+            "Differentiate clearly by vertical: clinical (sugar.fit), corporate (Breathe), scale (HealthifyMe), nutrition-first (Fitelo)."
           }</div>
         </div>
       `;
     }
 
-    // comparison matrix without 'build app MVP' and highlighting FastFitHub
     function renderMatrix(){
       const container = document.getElementById('detail-inner');
       container.innerHTML = `
@@ -257,14 +260,14 @@
             <tr><td>Distribution</td><td class="best">Direct, HNI & referral-first</td><td>Consumer + partners</td><td>B2B / HR</td><td>App stores & partners</td><td>Direct-to-user</td></tr>
             <tr><td>Monetization</td><td class="best">High-ticket upfront & concierge fees</td><td>Programs & subscriptions</td><td>Enterprise contracts</td><td>Freemium → Premium</td><td>Subscription / packages</td></tr>
             <tr><td>AI / Tech</td><td class="best">Roadmap: analytics & smart tools (hydration)</td><td>Clinical analytics</td><td>Gamification</td><td>AI assistant</td><td>Personalization</td></tr>
-            <tr><td>Recommended Move</td><td class="best">Immediate mobile UI/UX redesign; highlight premium case studies & social proof</td><td>Broaden beyond clinical claims</td><td>Monetize consumer verticals</td><td>Upsell premium coaching</td><td>Move upmarket into premium tier</td></tr>
+            <tr><td>Recommended Move</td><td class="best">Mobile UI redesign; publish case studies; enable premium funnel</td><td>Broaden beyond clinical claims</td><td>Monetize consumer verticals</td><td>Upsell premium coaching</td><td>Move upmarket into premium tier</td></tr>
           </tbody>
         </table>
-        <div style="margin-top:12px;color:var(--muted)">Note: Matrix emphasizes FastFitHub as the premium leader and prioritizes visual & mobile product design.</div>
+        <div style="margin-top:12px;color:var(--muted)">Note: Matrix is high-level — replace with exact KPIs for investor-ready accuracy.</div>
       `;
     }
 
-    // tabs interaction (mobile-friendly)
+    // Tabs interaction
     document.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', (e)=>{
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -272,7 +275,6 @@
         const target = e.currentTarget.dataset.target;
         if(target === 'matrix'){ renderMatrix(); return; }
         render(target);
-        // scroll card into view on small screens
         if(window.innerWidth < 980) document.getElementById('detail-card').scrollIntoView({behavior:'smooth',block:'start'});
       });
     });
@@ -280,9 +282,9 @@
     // default
     render('fastfithub');
 
-    // CTAs (wire to your systems)
-    document.getElementById('cta-contact').addEventListener('click', ()=>alert('Open calendar or CRM integration — wire this to your system.'));
-    document.getElementById('cta-brief').addEventListener('click', ()=>alert('Generate downloadable brief (PDF) — wire backend export.'));
+    // CTAs
+    document.getElementById('cta-contact').addEventListener('click', ()=>{ alert('Action: Connect calendar/CRM (wire to your system).'); });
+    document.getElementById('cta-brief').addEventListener('click', ()=>{ alert('Action: Generate downloadable brief (wire to backend).'); });
   </script>
 </body>
 </html>
