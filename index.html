@@ -1,0 +1,259 @@
+<!-- fastfithub-competitor-comparison.html
+     Single-file: News-style competitor comparison page with tabs & animations.
+     Replace SVG placeholders with real logo images (img src="...").
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FastFitHub — Competitor Brief (Sugar.fit, Breathe Well-being, HealthifyMe, Fitelo)</title>
+  <meta name="description" content="FastFitHub compared with sugar.fit, Breathe Well-being, HealthifyMe, Fitelo — business-news style comparison, metrics, strengths, weaknesses." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#7cf59f; --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#071026 0%, #071528 60%); color:#e6eef6;}
+    .container{max-width:1200px;margin:32px auto;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.7);}
+    .header{display:flex;align-items:center;gap:18px;}
+    .brand-logo{width:68px;height:68px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--glass);backdrop-filter:blur(6px);}
+    .title{font-size:20px;font-weight:700;letter-spacing:0.2px}
+    .tagline{color:var(--muted);font-size:13px;margin-top:4px;}
+    .tabs{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+    .tab{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--muted);transition:all .22s}
+    .tab.active{background:linear-gradient(90deg, rgba(124,245,159,0.08), rgba(124,245,159,0.02));border-color:rgba(124,245,159,0.18);color:var(--accent);box-shadow:0 6px 18px rgba(124,245,159,0.06) scale(.99)}
+    .content{display:grid;grid-template-columns:1fr 380px;gap:20px;margin-top:22px}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .headline{font-size:18px;font-weight:700}
+    .kpi-grid{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .kpi{flex:1 1 120px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:12px;border-radius:10px;text-align:center}
+    .kpi .num{font-weight:700;font-size:16px;color:var(--accent)}
+    .kpi .label{font-size:12px;color:var(--muted);margin-top:6px}
+    .logo-row{display:flex;gap:10px;align-items:center;margin-top:12px}
+    .logo-box{width:88px;height:54px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;padding:6px}
+    /* Animated news ticker */
+    .ticker{overflow:hidden;white-space:nowrap;border-radius:8px;padding:10px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));margin-top:12px;}
+    .ticker .inner{display:inline-block;padding-left:100%;animation:slide 18s linear infinite;color:var(--muted)}
+    @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+    /* comparison table */
+    table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+    th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.02);text-align:left}
+    th{color:var(--muted);font-weight:600;font-size:13px}
+    td small{display:block;color:var(--muted);font-size:12px}
+    /* CTA */
+    .cta{display:flex;gap:10px;margin-top:16px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,#00d97e,#7cf59f);color:#051219}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    /* right column */
+    .right .news{font-size:13px;color:var(--muted)}
+    .pros{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .pro{background:rgba(255,255,255,0.01);padding:8px;border-radius:8px;border-left:4px solid rgba(124,245,159,0.12)}
+    /* responsive */
+    @media (max-width:980px){.content{grid-template-columns:1fr;}.logo-row{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="FastFitHub competitor comparison">
+    <div class="header">
+      <div class="brand-logo" aria-hidden="true">
+        <!-- FastFitHub logo placeholder: replace with <img src="YOUR_URL" alt="FastFitHub"> -->
+        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect rx="14" width="100" height="100" fill="#071528"/>
+          <g transform="translate(14,14)">
+            <circle cx="22" cy="22" r="20" fill="#7cf59f" opacity="0.15"/>
+            <path d="M10 40 L60 10" stroke="#7cf59f" stroke-width="6" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="title">FastFitHub — Competitor Brief</div>
+        <div class="tagline">Business-news style competitive analysis: sugar.fit · Breathe Well-being · HealthifyMe · Fitelo · FastFitHub</div>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Competitor tabs">
+      <button class="tab active" data-target="fastfithub">FastFitHub</button>
+      <button class="tab" data-target="sugarfit">sugar.fit</button>
+      <button class="tab" data-target="breathe">Breathe Well-being</button>
+      <button class="tab" data-target="healthifyme">HealthifyMe</button>
+      <button class="tab" data-target="fitelo">Fitelo</button>
+      <button class="tab" data-target="matrix">Comparison Matrix</button>
+    </div>
+
+    <div class="content" id="content-area">
+      <!-- Left column: detail card -->
+      <div class="card" id="detail-card">
+        <div id="detail-inner">
+          <!-- Dynamic content injected by JS -->
+        </div>
+      </div>
+
+      <!-- Right column: news sidebar -->
+      <aside class="card right" style="width:100%;max-width:360px">
+        <div class="headline">Market Snapshot</div>
+        <div class="news">
+          <div class="ticker" aria-hidden="true">
+            <div class="inner">Latest — sugar.fit raised growth capital; Breathe Well-being focuses on corporate well-being; HealthifyMe remains one of India’s largest health apps; Fitelo rebranded after funding. FastFitHub: premium, results-first transformation for HNIs & celebrities.</div>
+          </div>
+
+          <div class="kpi-grid" style="margin-top:14px">
+            <div class="kpi"><div class="num">Premium</div><div class="label">Positioning</div></div>
+            <div class="kpi"><div class="num">AI-ready</div><div class="label">Product Roadmap</div></div>
+            <div class="kpi"><div class="num">₹1Cr/mo</div><div class="label">Target</div></div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="headline" style="font-size:15px;margin-bottom:8px">Quick Actions</div>
+            <div class="cta">
+              <button class="btn primary" id="cta-contact">Book a Strategy Call</button>
+              <button class="btn ghost" id="cta-brief">Download Brief</button>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="headline" style="font-size:14px">Logos</div>
+            <div class="logo-row">
+              <!-- Replace these inline SVGs with <img src="URL" alt="..."> -->
+              <div class="logo-box" title="FastFitHub">
+                <svg width="64" height="34" viewBox="0 0 80 34"><rect width="80" height="34" rx="6" fill="#0b1220"/><text x="8" y="22" fill="#7cf59f" font-weight="700" font-size="12">FastFitHub</text></svg>
+              </div>
+              <div class="logo-box" title="sugar.fit">
+                <svg width="64" height="34" viewBox="0 0 80 34"><rect width="80" height="34" rx="6" fill="#2f123a"/><text x="8" y="22" fill="#e9d8f6" font-weight="700" font-size="12">sugar.fit</text></svg>
+              </div>
+              <div class="logo-box" title="HealthifyMe">
+                <svg width="64" height="34" viewBox="0 0 80 34"><rect width="80" height="34" rx="6" fill="#3a0b0b"/><text x="8" y="22" fill="#ffb5a5" font-weight="700" font-size="12">HealthifyMe</text></svg>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <div class="headline" style="font-size:14px">Why this matters</div>
+            <div class="pros">
+              <div class="pro">Market leaders define pricing & enterprise distribution models — learn, differentiate, and own premium segments.</div>
+              <div class="pro">Corporate wellness players (Breathe) show B2B distribution lanes. FastFitHub must lock HNI channels & partnerships.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer style="margin-top:18px;color:var(--muted);font-size:13px">
+      <div>Notes: Logos are placeholders — swap in your brand assets. This page is designed to be embedded or exported as a single landing page for investor or partner briefs.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Data model (keep concise — update with real metrics)
+    const data = {
+      fastfithub: {
+        name: "FastFitHub",
+        desc: "Premium, results-first transformation platform targeting self-motivated HNIs, celebrities and high-performers. Weekly transformations, custom plans, AI roadmap.",
+        kpis: [
+          {n:"1000+", l:"Paid users (10 months)"},
+          {n:"Smart Tools", l:"Hydration calculator & analytics"},
+          {n:"Premium", l:"High-ticket model"}
+        ],
+        pros: ["High-touch elite coaching","No discounts policy","AI & app roadmap (FastFitHub 2.0)"],
+        cons: ["Requires app & payment integrations","Needs process & KPIs scale"]
+      },
+      sugarfit: {
+        name: "sugar.fit",
+        desc: "Diabetes-focused digital care & reversal programs; enterprise & consumer offerings. Notable funding and growth in diabetes management tech.",
+        kpis: [
+          {n:"Diabetes focus", l:"Clinical programs"},
+          {n:"Enterprise", l:"Employer & partner distribution"},
+          {n:"Funded", l:"Growth capital"}
+        ],
+        pros:["Strong clinical positioning","Funding to scale"], cons:["Narrow vertical (diabetes)"]
+      },
+      breathe: {
+        name: "Breathe Well-being",
+        desc: "Holistic employee well-being & engagement platform with gamified health programs, rewards integration, and corporate coverage across India.",
+        kpis:[{n:"B2B", l:"Corporate wellness"},{n:"Gamified", l:"Rewards & engagement"},{n:"Scale", l:"60+ towns"}],
+        pros:["B2B distribution","Gamification & rewards"], cons:["Less direct consumer premium positioning"]
+      },
+      healthifyme: {
+        name: "HealthifyMe",
+        desc: "Large-scale consumer health app with freemium + coached premium plans and AI assistant — one of India’s most downloaded health apps.",
+        kpis:[{n:"10M+", l:"Downloads (estimate)"},{n:"RIA", l:"AI assistant & coaching"},{n:"Multiple plans", l:"Freemium → Premium"}],
+        pros:["Scale & brand recognition","Mature product"], cons:["Competitive price tiers"]
+      },
+      fitelo: {
+        name: "Fitelo",
+        desc: "Nutrition & weight loss product that rebranded after funding rounds; focuses on flexible schedules and personalized plans.",
+        kpis:[{n:"Rebrand", l:"Post funding repositioning"},{n:"Nutrition-first", l:"Weight loss programs"},{n:"Consumer", l:"Direct-to-user"}],
+        pros:["Focused product offering","Recent fundraise"], cons:["Mid-market positioning"]
+      }
+    };
+
+    // render detail for a key
+    function render(key){
+      const d = data[key];
+      const container = document.getElementById('detail-inner');
+      container.innerHTML = `
+        <div class="headline">${d.name}</div>
+        <div style="color:var(--muted);margin-top:8px">${d.desc}</div>
+        <div class="kpi-grid" style="margin-top:12px">
+          ${d.kpis.map(k => `<div class="kpi"><div class="num">${k.n}</div><div class="label">${k.l}</div></div>`).join('')}
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:12px;align-items:center;justify-content:space-between">
+          <div style="min-width:0">
+            <div style="font-weight:700;margin-bottom:6px">Strengths</div>
+            ${d.pros ? `<ul style="margin:0;padding-inline:18px;color:var(--muted)">${d.pros.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
+          </div>
+          <div style="min-width:0">
+            <div style="font-weight:700;margin-bottom:6px">Weaknesses</div>
+            ${d.cons ? `<ul style="margin:0;padding-inline:18px;color:var(--muted)">${d.cons.map(c => `<li>${c}</li>`).join('')}</ul>` : ''}
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="headline" style="font-size:14px">Takeaway</div>
+          <div style="color:var(--muted);margin-top:8px">Action: ${d.name === "FastFitHub" ? "Lock premium referral partnerships, finalize app MVP, install payment gateway, and build 3 HNI case studies this quarter." : "Differentiate via unique positioning: clinical (sugar.fit), corporate (Breathe), scale (HealthifyMe), focused nutrition (Fitelo)."}</div>
+        </div>
+      `;
+    }
+
+    // Tabs interaction
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', (e)=>{
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        const target = e.currentTarget.dataset.target;
+        if(target === 'matrix'){ renderMatrix(); return; }
+        render(target);
+      });
+    });
+
+    // comparison matrix
+    function renderMatrix(){
+      const container = document.getElementById('detail-inner');
+      container.innerHTML = `
+        <div class="headline">Side-by-side — Quick Comparison</div>
+        <table aria-label="Comparison matrix">
+          <thead><tr><th>Category</th><th>FastFitHub</th><th>sugar.fit</th><th>Breathe</th><th>HealthifyMe</th><th>Fitelo</th></tr></thead>
+          <tbody>
+            <tr><td>Primary Focus</td><td>Premium coaching</td><td>Diabetes care</td><td>Corporate well-being</td><td>Mass consumer app</td><td>Nutrition & weight loss</td></tr>
+            <tr><td>Distribution</td><td>Direct & referrals</td><td>Consumer + partners</td><td>B2B / HR</td><td>App stores & partners</td><td>Direct-to-user</td></tr>
+            <tr><td>Monetization</td><td>High-ticket upfront</td><td>Programs & subscriptions</td><td>Enterprise contracts</td><td>Freemium → Premium</td><td>Subscription / packages</td></tr>
+            <tr><td>AI / Tech</td><td>Roadmap: AI & app</td><td>Clinical analytics</td><td>Gamification</td><td>AI assistant</td><td>Product personalization</td></tr>
+            <tr><td>Recommended Move</td><td>Lock HNI partnerships & build app MVP</td><td>Differentiate beyond clinical claims</td><td>Offer premium consumer vertical</td><td>Upsell premium coaching</td><td>Expand into premium segments</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:12px;color:var(--muted)">Note: High-level matrix — fill with your internal KPIs for investor-ready accuracy.</div>
+      `;
+    }
+
+    // default load
+    render('fastfithub');
+
+    // CTA hooks (demo)
+    document.getElementById('cta-contact').addEventListener('click', ()=>alert('Action: Open calendar / contact modal (wire this to your CRM).'));
+    document.getElementById('cta-brief').addEventListener('click', ()=>alert('Action: Generate downloadable brief (PDF).'));
+  </script>
+</body>
+</html>
